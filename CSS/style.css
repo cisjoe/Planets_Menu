@@ -1,0 +1,191 @@
+/* Start Global Rules */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  font-family: system-ui;
+  background: linear-gradient(#01012e, #240019);
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* End Global Rules */
+
+.hover {
+  color: white;
+  margin: auto;
+  position: relative;
+  bottom: -100px;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.hover::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  background-color: darkmagenta ;
+  animation: width 1s linear infinite alternate;
+  -webkit-animation: width 1s linear infinite alternate;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+section {
+  background: url(../media/Images/stars.png);
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+ul {
+  text-align: center;
+}
+
+ul li {
+  margin: 14px 0;
+}
+
+ul li::after {
+  content: attr(data-text);
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  font-size: 80px;
+  font-weight: 900;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  pointer-events: none;
+  letter-spacing: 15px;
+}
+
+@media (max-width: 575px) {
+  ul li::after {
+    font-size: 40px;
+  }
+}
+
+ul li:hover::after {
+  opacity: 0.5;
+  top: 50%;
+  letter-spacing: 5px;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 70%);
+  -webkit-transform: translate(-50%, 70%);
+  -moz-transform: translate(-50%, 70%);
+  -ms-transform: translate(-50%, 70%);
+  -o-transform: translate(-50%, 70%);
+  width: 180px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: 0 0 80px orangered;
+  opacity: 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+ul li:hover::before {
+  width: 80px;
+  opacity: .5;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  background-color: darkblue;
+  padding: 6px 15px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  position: relative;
+  z-index: 7;
+}
+
+@media (max-width: 575px) {
+  ul li a {
+    font-size: 20px;
+  }
+}
+
+ul:hover li a {
+  opacity: 0;
+}
+
+ul li a:hover {
+  opacity: 1;
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  background-color: darkmagenta;
+}
+
+@keyframes width {
+  to {
+    width: 40%;
+  }
+}
